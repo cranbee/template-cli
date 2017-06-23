@@ -1,0 +1,22 @@
+{
+  "name": "@cranbee/template-cli",
+  "version": "0.1.0",
+  "description": "Cranbee Template CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js compile test/test.html | cmp test/test.json && echo success"
+  },
+  "author": "DMA <dma@cranbee.com>",
+  "license": "ISC",
+  "bin": {
+    "cranbee-template": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cranbee/template-cli.git"
+  },
+  "dependencies": {
+    "@cranbee/template": "^0.1.0",
+    "commander": "^2.9.0"
+  }
+}
