@@ -4,7 +4,8 @@
   "description": "Cranbee Template CLI",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js compile test/test.html | cmp test/test.json && echo success"
+    "test": "node index.js compile test/test.html | cmp test/test.json && echo success",
+    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags"
   },
   "author": "DMA <dma@cranbee.com>",
   "license": "ISC",
