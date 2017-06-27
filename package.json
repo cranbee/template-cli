@@ -17,7 +17,7 @@
     "url": "https://github.com/cranbee/template-cli.git"
   },
   "dependencies": {
-    "@cranbee/template": "^0.1.0",
+    "@cranbee/template": "^0.2.0",
     "commander": "^2.9.0"
   }
 }

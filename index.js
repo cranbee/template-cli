@@ -26,7 +26,7 @@ function compile(srcFile) {
         tokens = Template.scan(text);
         ast = Template.parse(tokens);
     } catch (err) {
-        if (err.name === 'LexicalError' || err.name === 'SyntaxError') {
+        if (err.name === 'SyntaxError') {
             printError(srcFile, lines, err);
             process.exit(1);
         } else {
