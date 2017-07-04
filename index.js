@@ -20,10 +20,9 @@ function compile(srcFile) {
     let input = FS.readFileSync(srcFile, 'utf-8');
     let lines = input.split(/\r\n|\r|\n/g);
     let text = lines.join('\n');
-    let tokens = null;
-    let ast = null;
+    let ast;
     try {
-        tokens = Template.scan(text);
+        let tokens = Template.scan(text);
         ast = Template.parse(tokens);
     } catch (err) {
         if (err.name === 'SyntaxError') {
