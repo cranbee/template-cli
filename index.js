@@ -22,8 +22,7 @@ function compile(srcFile) {
     let text = lines.join('\n');
     let ast;
     try {
-        let tokens = Template.scan(text);
-        ast = Template.parse(tokens);
+        ast = Template.parse(text);
     } catch (err) {
         if (err.name === 'SyntaxError') {
             printError(srcFile, lines, err);
