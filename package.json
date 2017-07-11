@@ -9,7 +9,7 @@
     "generate-sample": "node index.js compile test/test.html > test/test.json"
   },
   "author": "DMA <dma@cranbee.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "cranbee-template": "./index.js"
   },
