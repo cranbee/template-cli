@@ -1,14 +1,14 @@
 #! /usr/bin/env node
 
-let FS = require('fs');
-let Program = require('commander');
-let Template = require('@cranbee/template');
-let Package = require('./package.json');
+let FS = require("fs");
+let Program = require("commander");
+let Template = require("@cranbee/template");
+let Package = require("./package.json");
 
 // () => void
 function main() {
     Program.version(Package.version);
-    Program.command('compile <file>').action(compile);
+    Program.command("compile <file>").action(compile);
     Program.parse(process.argv);
     if (Program.args.length < 2) {
         Program.help();
@@ -17,14 +17,14 @@ function main() {
 
 // string => void
 function compile(srcFile) {
-    let input = FS.readFileSync(srcFile, 'utf-8');
+    let input = FS.readFileSync(srcFile, "utf-8");
     let lines = input.split(/\r\n|\r|\n/g);
-    let text = lines.join('\n');
+    let text = lines.join("\n");
     let ast;
     try {
         ast = Template.parse(text);
     } catch (err) {
-        if (err.name === 'SyntaxError') {
+        if (err.name === "SyntaxError") {
             printError(srcFile, lines, err);
             process.exit(1);
         } else {
@@ -39,7 +39,7 @@ function compile(srcFile) {
 // (string, array, object) => void
 function printError(srcFile, lines, err) {
     let lc = getLC(lines, err.pos);
-    let spaces = ' '.repeat(lc.column - 1);
+    let spaces = " ".repeat(lc.column - 1);
     console.error(`${srcFile}: ${err.message} at ${lc.line}:${lc.column}`);
     console.error(lines[lc.line - 1]);
     console.error(`${spaces}^`);
