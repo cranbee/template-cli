@@ -1,5 +1,4 @@
 # Cranbee Template CLI
-## Introduction
 This is a CLI tool for compiling [Cranbee Templates](https://github.com/cranbee/template).
 
 ## Installation
