@@ -5,7 +5,7 @@ let Program = require("commander");
 let Template = require("@cranbee/template");
 let Package = require("./package.json");
 
-// () => void
+// () => undefined
 function main() {
     Program.version(Package.version);
     Program.command("compile <file>").action(compile);
@@ -15,7 +15,7 @@ function main() {
     }
 }
 
-// string => void
+// string => undefined
 function compile(srcFile) {
     let input = FS.readFileSync(srcFile, "utf-8");
     let lines = input.split(/\r\n|\r|\n/g);
@@ -36,7 +36,7 @@ function compile(srcFile) {
     console.log(output);
 }
 
-// (string, array, object) => void
+// (string, array, object) => undefined
 function printError(srcFile, lines, err) {
     let lc = getLC(lines, err.pos);
     let spaces = " ".repeat(lc.column - 1);
