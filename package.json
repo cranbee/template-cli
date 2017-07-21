@@ -4,10 +4,7 @@
   "description": "Cranbee Template CLI",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js compile test/test.html | cmp test/test.json && echo success",
-    "patch-release": "npm version patch && npm publish --access=public && git push --follow-tags",
-    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags",
-    "generate-sample": "node index.js compile test/test.html > test/test.json"
+    "test": "make test"
   },
   "author": "DMA <dma@cranbee.com>",
   "license": "MIT",
