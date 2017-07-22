@@ -1,10 +1,9 @@
 .PHONY: default install sample test clean patch minor
 
-default: install
+default: install test
 
 install:
 	npm install
-	npm update
 
 sample:
 	node index.js compile test/test.html > test/test.json
